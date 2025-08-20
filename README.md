@@ -26,7 +26,7 @@ I’m **G. Sai Pradhun**, a Future Edge AI Architect | Starry-Eyed Astronomer | 
 ---
 
 ## 📂 Project Structure
-
+```
 sai-portfolio/
 ├── src/
 │ ├── assets/ # Images and background assets
@@ -37,6 +37,7 @@ sai-portfolio/
 ├── package.json
 ├── tailwind.config.js
 └── README.md
+```
 
 
 ---
