@@ -1,0 +1,112 @@
+{
+  "name": "Sai Pradhun Gudipudi",
+  "title": "Stellar Visionary",
+  "tagline": "I build thinking machines by day and wander the cosmos (and code) by night.",
+  "profileImage": "/assets/ayano.jpeg",
+  "email": "saipradhun@gmail.com",
+  "education": [
+    {
+      "degree": "B.Tech, Computer Science and Engineering",
+      "institution": "K L University",
+      "year": "08/2023 – present",
+      "location": "Vaddeswaram, India"
+    }
+  ],
+  "skills": [
+    "Python",
+    "AI/ML",
+    "TensorFlow",
+    "PyTorch",
+    "React",
+    "Node.js",
+    "Cloud",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Java",
+    "Rust",
+    "Prompt Engineering",
+    "Peer Tutoring",
+    "Psychology"
+  ],
+  "experience": [
+    {
+      "role": "Club Member, ZEROONE (The Code Club)",
+      "company": "K L University",
+      "dates": "08/2023 - Present",
+      "bullets": [
+        "Participated in hands-on projects, coding challenges, and workshops",
+        "Collaborated on team projects and events to foster technical skills"
+      ]
+    },
+    {
+      "role": "Team Lead, ZEROONE",
+      "company": "K L University",
+      "dates": "04/2024 - 04/2025",
+      "bullets": [
+        "Led a small team to develop a task manager website for a social internship project",
+        "Designed and implemented task management plugins and web features"
+      ]
+    },
+    {
+      "role": "Lead of Technical Department, VIVIDRA",
+      "company": "VIVIDRA (KL University startup)",
+      "dates": "07/2024 - 11/2024",
+      "bullets": [
+        "Managed IT systems and coordinated cross-functional tech work",
+        "Oversaw development and maintenance of internal tooling"
+      ]
+    },
+    {
+      "role": "Product Researcher, FITOOR-E-KALA",
+      "company": "FITOOR-E-KALA (K L University startup)",
+      "dates": "03/2024 - 06/2024",
+      "bullets": [
+        "Researched sustainable materials and emerging textile technologies to guide product choices",
+        "Collaborated with design and sales to convert market insights into actionable product decisions"
+      ]
+    },
+    {
+      "role": "Project Trainee, Defence Electronics Research Laboratory (DLRL)",
+      "company": "DLRL",
+      "dates": "05/2025 - 07/2025",
+      "bullets": [
+        "Designed an end-to-end OCR pipeline combining traditional OCR and AI methods",
+        "Developed, tested, and deployed a prototype for scanned document processing"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "timeframe": "12/2023 - present",
+      "description": "Built responsive websites and interactive web apps focusing on UX, accessibility, and performance.",
+      "tech": ["HTML", "CSS", "JavaScript", "React"],
+      "link": "",
+      "image": "",
+      "source": "With a strong foundation in HTML, CSS, JavaScript, and Prompting, I have developed a diverse range of static and dynamic websites, focusing on both functionality and user experience. My web development projects include business websites, personal portfolios, blogs, and interactive applications, each designed to be visually appealing and responsive."
+    },
+    {
+      "id": "superdense-coding",
+      "title": "Decoding SuperDense Coding (Amravathi Quantum Valley Hackathon)",
+      "timeframe": "08/2025 – 09/2025",
+      "description": "Designed and implemented a quantum circuit simulator demonstrating the Superdense Coding protocol; integrated Qiskit AerSimulator and a Streamlit UI for real-time interaction.",
+      "tech": ["Qiskit", "Python", "Streamlit"],
+      "link": "",
+      "image": "",
+      "source": "Designed the overall system architecture for a quantum computing simulator implementing the Superdense Coding Protocol. Planned and established a modular code structure, separating core quantum logic, configuration management, and user interface components for maintainability and scalability. Developed the technical framework enabling real-time quantum circuit simulation, multi-user authentication, and advanced security features. Collaborated with the development team to integrate Qiskit AerSimulator, Streamlit UI, and comprehensive testing."
+    },
+    {
+      "id": "ocr-dlrl",
+      "title": "Parsing of Scan Documents Using AI-Based OCR Techniques (DLRL)",
+      "timeframe": "05/2025 – 07/2025",
+      "description": "Built an end-to-end OCR pipeline combining traditional OCR and deep-learning to extract structured data from scanned documents; deployed a prototype for DRDO with robust preprocessing and post-processing.",
+      "tech": ["Tesseract", "Python", "Deep Learning"],
+      "link": "",
+      "image": "",
+      "source": "Designed the complete system architecture and developed the end-to-end OCR pipeline for scanned documents. Implemented integrated workflows combining traditional OCR with AI-based methods for structured data extraction. Developed and tested the prototype, ensuring robustness, accuracy, and scalability. Led testing, optimization, and deployment of the solution, delivering it successfully to the concerned department at DRDO."
+    }
+  ],
+  "resumeFile": "Sai-Pradhun-Gudipudi_.pdf"
+}
