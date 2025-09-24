@@ -1,76 +1,87 @@
 // src/components/About.js
 import React from "react";
 import { motion } from "framer-motion";
-import AboutBg from "../assets/cosnos.jpg"; // replace with your About background
-import Starfield from "./Starfield"; // reuse the same star overlay
+import Starfield from "./Starfield";
+import resume from "../data/resume.json";
+import AboutBg from "../assets/cosnos.jpg";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="relative py-20 -mt-20 text-white flex items-center justify-center"
-    >
-      {/* Background Image */}
+    <section id="about" className="relative pt-40 md:pt-56 lg:pt-72 pb-20 text-white">
       <div className="absolute inset-0">
-        <img
-          src={AboutBg}
-          alt="About Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black opacity-60"></div> {/* dark overlay */}
-        {/* Top gradient for smooth overlap */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none"></div>
+        <img src={AboutBg} alt="About background" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      {/* Starfield overlay */}
       <Starfield />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl px-4 text-center">
-        {/* Section Title */}
+  <div className="relative z-10 max-w-6xl mx-auto px-4">
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
+          className="text-3xl md:text-4xl font-bold text-center mb-6"
         >
-          About Me
+          About
         </motion.h2>
 
-        {/* Bio */}
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-lg md:text-xl text-gray-300 mb-10"
+          transition={{ duration: 0.9 }}
+          className="text-gray-300 text-center max-w-3xl mx-auto mb-8"
         >
-          I’m a Future Edge AI Architect and a Starry-Eyed Astronomer. I build thinking machines by day and wander the cosmos (and code) by night.  
-          I’m passionate about exploring the intersection of AI, space, and creativity, and I strive to build projects that reflect curiosity and innovation.
+          {resume.tagline}
         </motion.p>
 
-        {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
-        >
-          <div className="p-4 bg-gray-800 rounded-lg hover:bg-purple-600 transition-all">
-            <h3 className="font-semibold text-lg mb-1">Python</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+          <div className="lg:col-span-3">
+            <h3 className="font-semibold text-xl mb-4">Experience</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {resume.experience.map((exp, i) => (
+                <article key={i} className="relative bg-gradient-to-br from-black/50 to-black/30 backdrop-blur-sm border border-white/5 p-4 pt-8 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
+                  <div className="absolute right-3 top-3 bg-black/50 border border-white/8 px-2 py-0.5 rounded text-[11px] text-gray-200 whitespace-nowrap">{exp.dates}</div>
+                  <div className="mb-2">
+                    <div className="font-semibold text-lg">{exp.role}</div>
+                    <div className="text-sm text-gray-400">{exp.company}</div>
+                  </div>
+                  <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    {exp.bullets.map((b, idx) => (
+                      <li key={idx}>{b}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
-          <div className="p-4 bg-gray-800 rounded-lg hover:bg-purple-600 transition-all">
-            <h3 className="font-semibold text-lg mb-1">AI/ML</h3>
-          </div>
-          <div className="p-4 bg-gray-800 rounded-lg hover:bg-purple-600 transition-all">
-            <h3 className="font-semibold text-lg mb-1">React</h3>
-          </div>
-          <div className="p-4 bg-gray-800 rounded-lg hover:bg-purple-600 transition-all">
-            <h3 className="font-semibold text-lg mb-1">Cloud</h3>
-          </div>
-        </motion.div>
+
+          <aside className="lg:col-span-1">
+            <div className="sticky top-28 z-20 bg-gradient-to-br from-black/50 to-black/30 backdrop-blur-sm border border-white/5 p-4 rounded-xl max-h-[64vh] overflow-auto">
+              <h3 className="font-semibold text-lg mb-2">Skills & Education</h3>
+
+              <div className="mb-6">
+                <div className="text-sm text-gray-400 mb-2">Education</div>
+                {resume.education.map((ed, i) => (
+                  <div key={i} className="mb-2">
+                    <div className="font-medium text-base">{ed.degree}</div>
+                    <div className="text-sm text-gray-400">{ed.institution} • <span className="text-xs">{ed.year}</span></div>
+                  </div>
+                ))}
+              </div>
+
+              <div>
+                <div className="text-sm text-gray-400 mb-3">Skills</div>
+                <div className="flex flex-wrap gap-3">
+                  {resume.skills.map((s, i) => (
+                    <span key={i} className="inline-flex items-center justify-center px-3 py-1 bg-purple-600/95 rounded-full text-sm max-w-[9rem] min-w-0 text-center whitespace-normal">{s}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   );

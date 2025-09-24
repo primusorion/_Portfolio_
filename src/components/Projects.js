@@ -2,52 +2,36 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
-
-// Example projects – replace with your own
-const projects = [
-  {
-    title: "AI Space Explorer",
-    description: "Edge AI project simulating cosmic exploration.",
-    image: "/assets/project1.png",
-    tech: ["Python", "TensorFlow", "Docker"],
-    link: "#",
-  },
-  {
-    title: "Stellar Dashboard",
-    description: "Interactive dashboard visualizing star data.",
-    image: "/assets/project2.png",
-    tech: ["React", "D3.js", "Tailwind"],
-    link: "#",
-  },
-  {
-    title: "Cosmic Chatbot",
-    description: "AI-driven chatbot for astronomy enthusiasts.",
-    image: "/assets/project3.png",
-    tech: ["Node.js", "GPT", "Cloud"],
-    link: "#",
-  },
-];
+import resume from "../data/resume.json";
 
 const Projects = () => {
+  const projects = resume.projects || [];
+
   return (
-    <section
-      id="projects"
-      className="relative py-32 bg-gradient-to-b from-black via-gray-900 to-black text-white"
-    >
+    <section id="projects" className="relative py-20 text-white">
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl md:text-5xl font-bold text-center mb-16"
+        transition={{ duration: 0.6 }}
+        className="text-3xl md:text-4xl font-bold text-center mb-12"
       >
         Projects
       </motion.h2>
 
-      <div className="container mx-auto px-4 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
+      <div className="max-w-6xl mx-auto px-4">
+        {projects.length === 0 ? (
+          <div className="p-8 bg-gray-900/40 rounded-lg text-center">
+            <p className="text-gray-300 mb-4">No projects listed yet. If you'd like, I can extract your real project entries from your PDF and populate them here with descriptions and images.</p>
+            <p className="text-sm text-gray-400">To link the resume for download, put <code className="text-xs">Sai-Pradhun-Gudipudi_.pdf</code> in the <code className="text-xs">public/</code> folder and the Download Resume button will work.</p>
+          </div>
+        ) : (
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
